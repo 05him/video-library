@@ -3,11 +3,19 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter } from 'react-router-dom';
+import { VideosProvider, useVideos } from './context/VideosContext/VideosProvider';
+
+export { useVideos }
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    <BrowserRouter>
+    <VideosProvider>
     <App />
+    </VideosProvider>
+    </BrowserRouter>
   </React.StrictMode>
 );
 
